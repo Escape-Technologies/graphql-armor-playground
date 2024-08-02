@@ -1,0 +1,9 @@
+[
+  {
+    "query": "query { numberRepresentation(value: 5) { litteralName numberRepresentation primeDividers { numberRepresentation } following { numberRepresentation } preceding { numberRepresentation } isPrime } }"
+  },
+  {
+    "query": "query { numberRepresentation(value: 6) { litteralName numberRepresentation primeDividers { numberRepresentation } following { numberRepresentation } preceding { numberRepresentation } isPrime } }"
+  }
+]
+

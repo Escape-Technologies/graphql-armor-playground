@@ -1,0 +1,12 @@
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: defcon-demo-container
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+    command: sh -c "node proxy.js & node index.js & node index-protected.js & wait"

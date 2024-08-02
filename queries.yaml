@@ -1,0 +1,83 @@
+queries:
+  - name: Stacktrace
+    comment: Any erroneous query is sufficient
+  - name: MaxDepth
+    query: | 
+      query MaxDepth{
+        numberRepresentation(value: 4) {
+          following {
+            preceding {
+              following {
+                preceding {
+                  following {
+                    following {
+                      preceding {
+                        following {
+                          litteralName
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  - name: FieldSuggestion
+    query: |
+      query FieldSuggestion{
+        numberRepresentation(value: 4) {
+          isPrim
+        }
+      }
+  - name: MaxAliases
+    query: |
+      query MaxAliases{
+        numberRepresentation(value: 4) {
+          a: isPrime
+          b: isPrime
+          c: isPrime
+          d: isPrime
+          e: isPrime
+          f: isPrime
+          g: isPrime
+          h: isPrime
+          i: isPrime
+          j: isPrime
+          k: isPrime
+          l: isPrime
+          m: isPrime
+          n: isPrime
+          o: isPrime
+          p: isPrime
+          q: isPrime
+          r: isPrime
+          s: isPrime
+          t: isPrime
+          u: isPrime
+          v: isPrime
+          w: isPrime
+          x: isPrime
+          y: isPrime
+          z: isPrime
+        }
+      }
+  - name: MaxDirectives
+    query: |
+      query MaxDirectives{
+        numberRepresentation(value: 4) {
+          following {
+            numberRepresentation @include(if: true) @skip(if: false)
+          }
+        }
+      }
+  - name: BatchedQueries
+    command: "curl -X POST http://localhost:4000/graphql -H 'Content-Type: application/json' -d @batch-query.json"
+  - name: Stacktrace
+    query: |
+      query Stacktrace {
+        numbersAreUseless(value: 3) {
+          litteralName
+        }
+      }
