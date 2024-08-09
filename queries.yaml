@@ -99,7 +99,12 @@ queries:
         }
       }
   - name: Stacktrace
-    comment: Any erroneous query is sufficient
+    comment: |
+      {
+        __schema {
+          queryTyp
+        }
+      }
   - name: MaxDepth
     query: |
       query MaxDepth{
